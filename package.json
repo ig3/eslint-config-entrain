@@ -1,11 +1,8 @@
 {
-  "name": "eslint-config-semistandard",
-  "description": "eslint sharable config for semistandard",
-  "version": "15.0.0",
-  "author": "Dan Flettre <flettre@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/standard/eslint-config-semistandard/issues"
-  },
+  "name": "eslint-config-entrain",
+  "description": "eslint sharable config for Entrain",
+  "version": "1.0.0",
+  "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "eslint": "^6.0.1",
     "eslint-config-standard": "^14.0.0",
@@ -17,8 +14,8 @@
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
   },
-  "homepage": "https://github.com/standard/eslint-config-semistandard",
   "keywords": [
+    "entrain",
     "semistandard",
     "style checker",
     "code style",
@@ -56,7 +53,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/standard/eslint-config-semistandard.git"
+    "url": "git@git.entrain.nz:eslint/eslint-config-entrain.git"
   },
   "scripts": {
     "test": "standard && tape test/*.js | tap-spec"

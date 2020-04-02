@@ -1,4 +1,4 @@
-# eslint-config-semistandard
+# eslint-config-entrain
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
@@ -8,7 +8,7 @@
 [travis-image]: https://img.shields.io/travis/standard/eslint-config-semistandard.svg?style=flat-square
 [travis-url]: https://travis-ci.org/standard/eslint-config-semistandard
 
-eslint sharable config for semistandard
+eslint sharable config for Entrain
 
 ## Install
 
@@ -16,6 +16,7 @@ eslint sharable config for semistandard
 npm install --save-dev eslint-plugin-promise eslint-plugin-standard eslint-plugin-node eslint-plugin-import
 npm install --save-dev eslint-config-standard
 npm install --save-dev eslint-config-semistandard
+npm install --save-dev eslint-config-entrain
 # note that eslint-plugin-promise, eslint-plugin-standard, eslint-plugin-node, eslint-plugin-import & eslint-config-standard are required peer dependencies
 ```
 
