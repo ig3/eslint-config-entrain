@@ -4,6 +4,7 @@
   "rules": {
     "semi": [2, "always"],
     "no-extra-semi": 2,
-    "operator-linebreak": ["error", "before"]
+    "operator-linebreak": ["error", "before"],
+    "indent": [ "error", 2, { "MemberExpression": 0 }]
   }
 }
