@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "eslint": "^6.0.1",
@@ -45,7 +45,7 @@
   "main": "index.js",
   "peerDependencies": {
     "eslint": ">=6.0.1",
-    "eslint-config-standard": "^13.0.1",
+    "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": ">=2.18.0",
     "eslint-plugin-node": ">=9.1.0",
     "eslint-plugin-promise": ">=4.2.1",
