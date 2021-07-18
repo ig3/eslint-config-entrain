@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "eslint": "^6.0.1",
@@ -11,8 +11,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "standard": "*",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "tape": "^5.2.2"
   },
   "keywords": [
     "entrain",
@@ -44,18 +43,18 @@
   "license": "ISC",
   "main": "index.js",
   "peerDependencies": {
-    "eslint": ">=6.0.1",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": ">=2.18.0",
-    "eslint-plugin-node": ">=9.1.0",
-    "eslint-plugin-promise": ">=4.2.1",
-    "eslint-plugin-standard": ">=4.0.0"
+    "eslint": ">=7.31.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": ">=2.23.4",
+    "eslint-plugin-node": ">=11.1.0",
+    "eslint-plugin-promise": ">=5.1.0",
+    "eslint-plugin-standard": ">=5.0.0"
   },
   "repository": {
     "type": "git",
     "url": "git@git.entrain.nz:eslint/eslint-config-entrain.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js | tap-spec"
+    "test": "standard && tape test/*.js"
   }
 }
