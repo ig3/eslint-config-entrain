@@ -36,6 +36,10 @@ Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md
 
 ## Changes
 
+### 2.0.1 - 20210718
+
+Removed peer dependency on eslint-plugin-standard
+
 ### 2.0.0 - 20210718
 
 Update dependencies:
