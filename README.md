@@ -120,7 +120,7 @@ I quite like [standardjs](https://standardjs.com/) except:
  2. I don't like indenting promise chains. One of the advantages of promises
     over callbacks is avoiding indentation and requiring the chain to be
     indented removes some of this benefit. But eslint-config-entrain doesn't
-    enforce no indentation, to feel free to indent if that's your
+    enforce no indentation, so feel free to indent if that's your
     preference.
 
  3. Sometimes it is necessary to override settings.
