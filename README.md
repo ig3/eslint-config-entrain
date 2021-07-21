@@ -13,28 +13,150 @@ eslint sharable config for Entrain
 ## Install
 
 ```bash
-npm install --save-dev eslint-plugin-promise eslint-plugin-standard eslint-plugin-node eslint-plugin-import
-npm install --save-dev eslint-config-standard
-npm install --save-dev eslint-config-semistandard
 npm install --save-dev eslint-config-entrain
-# note that eslint-plugin-promise, eslint-plugin-standard, eslint-plugin-node, eslint-plugin-import & eslint-config-standard are required peer dependencies
 ```
 
 ## Usage
 
-Read up on how to use [sharable configs](http://eslint.org/docs/developer-guide/shareable-configs) at the eslint website.
+In `package.json` of the package where you want to use
+`eslint-config-entrain`, add a section to configure eslint to use the shared
+configuration:
 
-For more details see [eslint-config-standard](https://github.com/feross/eslint-config-standard)
+```
+  "eslintConfig": {
+    "extends": "entrain"
+  }
+```
 
-## Contributing
+You can add any other configuration you want to the same section. For
+example, one project required:
 
-Contributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
+```
+  "eslintConfig": {
+    "extends": "entrain",
+    "rules": {
+      "node/no-callback-literal": "off"
+    },
+    "parserOptions": {
+      "sourceType": "script"
+    }
+  }
+```
+
+This overrode one rule setting and changed one parser option, otherwise all
+settings as per `eslint-config-entrain`.
+
+For full details of creating and using shared configurations, see: 
+[sharable configs](http://eslint.org/docs/developer-guide/shareable-configs).
+
+Alternatively, you can use an
+[eslint configuration file](https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats).
+Again, this is merely a configuration of eslint, so everything in the
+[eslint](https://eslint.org/) documentation works as expected.
+
+
+## Rules
+
+`eslint-config-entrain` is based on
+[eslint-config-standard](https://github.com/feross/eslint-config-standard).
+
+Three rules are changed:
+
+```
+{
+  "extends": "standard",
+
+  "rules": {
+    "semi": [2, "always"],
+    "no-extra-semi": 2,
+    "indent": [ "error", 2, { "MemberExpression": 0 }]
+  }
+}
+```
+
+[Semicolons are required](https://eslint.org/docs/rules/semi)
+but [no extra semicolons](https://eslint.org/docs/rules/no-extra-semi)
+are allowed, and
+[2 spaces indentation (no tabs)](https://eslint.org/docs/rules/indent)
+without enforced indentaton of multi-line property chains.
+
+For example:
+
+```
+  functionReturningPromise()
+  .then(result => {
+    console.log('the result is: ', result);
+  })
+  .catch(err => {
+    console.error('failed with: ', err);
+  });
+```
+
+But if you prefer to indent the promise chain, that's OK too:
+
+```
+  functionReturningPromise()
+    .then(result => {
+      console.log('the result is: ', result);
+    })
+    .catch(err => {
+      console.error('failed with: ', err);
+    });
+```
+
+## Motivation
+
+I quite like [standardjs](https://standardjs.com/) except:
+
+ 1. For consistency with other languages that require semicolons (e.g. Perl,
+    C, etc.) I prefer to use semicolons to terminate statements. [Automatic
+    Semicolon
+    Insertion](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9) is
+    an unfortunate misfeature of JavaScript. It is not ambiguous at all
+    (despite much argument, disagreement and misunderstanding) but it
+    requires the developer to be familiar with and pay attention to the
+    rules: something that computers are good at but humans are not.
+
+ 2. I don't like indenting promise chains. One of the advantages of promises
+    over callbacks is avoiding indentation and requiring the chain to be
+    indented removes some of this benefit. But eslint-config-entrain doesn't
+    enforce no indentation, to feel free to indent if that's your
+    preference.
+
+ 3. Sometimes it is necessary to override settings.
+    [standardjs](https://standardjs.com/) makes doing so difficult to
+    impossible (e.g. it is practically impossible to set parser options when
+    using `standard`). While consistency is good, sometimes exceptions are
+    appropriate or even necessary (e.g. when developing a common node CJS
+    module that is not using strict mode), particularly when working with
+    existing / legacy code. 
+
+ 4. Working with a linter which I know is based on
+    [eslint](https://eslint.org) but which doesn't behave according to the
+    [eslint](https://eslint.org) documentation is frustrating, particularly
+    as some of the features of [standardjs](https://standardjs.com) are not
+    documented (e.g. details of the command line options).
+
+With this configuration, I can have all the rules of
+[standardjs](https://standardjs.org), with just a couple of personal
+preference deviations, by using the configuration as-is, but can easily
+change anything, according to the needs of the specific project, following
+standard [eslint](https://eslint.org) documentation: the best of both
+worlds.
 
 ## License
 
 [ISC](LICENSE.md)
 
 ## Changes
+
+### 2.0.3 - 20210722
+
+Update README.
+
+### 2.0.2 - 20210720
+
+Change peerDependencies to dependencies.
 
 ### 2.0.1 - 20210718
 
