@@ -13,18 +13,18 @@ eslint sharable config for Entrain
 ## Install
 
 ```bash
-npm install --save-dev eslint-config-entrain
+npm install --save-dev @ig3/eslint-config-entrain
 ```
 
 ## Usage
 
 In `package.json` of the package where you want to use
-`eslint-config-entrain`, add a section to configure eslint to use the shared
-configuration:
+`@ig3/eslint-config-entrain`, add a section to configure eslint to use the
+shared configuration:
 
 ```
   "eslintConfig": {
-    "extends": "entrain"
+    "extends": "@ig3/eslint-config-entrain"
   }
 ```
 
@@ -33,7 +33,7 @@ example, one project required:
 
 ```
   "eslintConfig": {
-    "extends": "entrain",
+    "extends": "@ig3/eslint-config-entrain",
     "rules": {
       "node/no-callback-literal": "off"
     },
@@ -149,6 +149,12 @@ worlds.
 [ISC](LICENSE.md)
 
 ## Changes
+
+### 2.0.4 - 20211027
+
+* Update dependencies.
+* Adapt tests to the new version of eslint.
+* Add an eslint configuration
 
 ### 2.0.3 - 20210722
 

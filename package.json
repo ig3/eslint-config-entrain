@@ -1,10 +1,11 @@
 {
-  "name": "eslint-config-entrain",
+  "name": "@ig3/eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
-    "tape": "^5.2.2"
+    "eslint": "^8.1.0",
+    "tape": "^5.3.1"
   },
   "keywords": [
     "entrain",
@@ -36,15 +37,14 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "eslint": ">=7.31.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": ">=2.23.4",
+    "eslint-plugin-import": ">=2.25.2",
     "eslint-plugin-node": ">=11.1.0",
-    "eslint-plugin-promise": ">=5.1.0"
+    "eslint-plugin-promise": ">=5.1.1"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.entrain.nz:eslint/eslint-config-entrain.git"
+    "url": "git+https://github.com/ig3/eslint-config-entrain.git"
   },
   "scripts": {
     "test": "eslint . && tape test/*.js"
