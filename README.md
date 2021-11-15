@@ -149,6 +149,8 @@ worlds.
 [ISC](LICENSE.md)
 
 ## Changes
+### 2.0.5 - 20211116
+Update dependencies
 
 ### 2.0.4 - 20211027
 
