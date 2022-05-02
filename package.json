@@ -1,7 +1,7 @@
 {
   "name": "@ig3/eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "eslint": "^8.14.0",

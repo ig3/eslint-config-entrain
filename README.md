@@ -69,7 +69,8 @@ Three rules are changed:
   "rules": {
     "semi": [2, "always"],
     "no-extra-semi": 2,
-    "indent": [ "error", 2, { "MemberExpression": 0 }]
+    "indent": [ "error", 2, { "MemberExpression": 0 }],
+    "object-shorthand": ["error", "consistent"]
   }
 }
 ```
@@ -79,6 +80,9 @@ but [no extra semicolons](https://eslint.org/docs/rules/no-extra-semi)
 are allowed, and
 [2 spaces indentation (no tabs)](https://eslint.org/docs/rules/indent)
 without enforced indentaton of multi-line property chains.
+
+[Object shorthand](https://eslint.org/docs/rules/object-shorthand) must be
+used consistently (all shorthand or all long-form) but isn't required.
 
 For example:
 
@@ -149,6 +153,10 @@ worlds.
 [ISC](LICENSE.md)
 
 ## Changes
+### 3.0.1 - 20220503
+
+Override object-shorthand to consistent
+
 ### 3.0.0 - 20220503
 
 Update dependencies.
