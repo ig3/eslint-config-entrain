@@ -149,6 +149,18 @@ worlds.
 [ISC](LICENSE.md)
 
 ## Changes
+### 3.0.0 - 20220503
+
+Update dependencies.
+
+```
+ eslint-config-standard   ^16.0.3  →   ^17.0.0     
+ eslint-plugin-import    >=2.25.3  →  >=2.26.0     
+ eslint-plugin-promise    >=5.1.1  →   >=6.0.0     
+ eslint                    ^8.2.0  →   ^8.14.0     
+ tape                      ^5.3.1  →    ^5.5.3     
+```
+
 ### 2.0.5 - 20211116
 Update dependencies
 
