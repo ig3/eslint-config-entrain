@@ -216,7 +216,10 @@ Update dependencies:
  tape                      ^4.9.1  →    ^5.2.2
 ```
 
-## 4.0.1 - 20240619
+## 4.0.0 - 20240619
  * Based on neostandard instead of standard
  * Configuration for eslint version 9 flat configuration
  * updated dependencies
+
+## 4.0.1 - 20240619
+ * Remove dependency @stylistic/eslint-plugin-js

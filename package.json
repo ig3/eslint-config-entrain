@@ -1,7 +1,7 @@
 {
   "name": "@ig3/eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "eslint": "^9.5.0",
@@ -18,7 +18,6 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "@stylistic/eslint-plugin-js": "^2.2.1",
     "neostandard": "^0.7.2"
   },
   "repository": {
