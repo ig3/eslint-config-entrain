@@ -1,14 +1,6 @@
 # eslint-config-entrain
 
-[![npm][npm-image]][npm-url]
-[![travis][travis-image]][travis-url]
-
-[npm-image]: https://img.shields.io/npm/v/eslint-config-semistandard.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/eslint-config-semistandard
-[travis-image]: https://img.shields.io/travis/standard/eslint-config-semistandard.svg?style=flat-square
-[travis-url]: https://travis-ci.org/standard/eslint-config-semistandard
-
-eslint sharable config for Entrain
+eslint sharable config for Entrain.
 
 ## Install
 
@@ -18,67 +10,81 @@ npm install --save-dev @ig3/eslint-config-entrain
 
 ## Usage
 
-In `package.json` of the package where you want to use
-`@ig3/eslint-config-entrain`, add a section to configure eslint to use the
-shared configuration:
+This package provides eslint version 9 flat configuration for CommonJS
+modules.
+
+Create file `eslint.config.js` containing:
 
 ```
-  "eslintConfig": {
-    "extends": "@ig3/eslint-config-entrain"
-  }
+'use strict';
+
+const eslintConfigEntrain = require('@ig3/eslint-config-entrain');
+
+module.exports = [
+  ...eslintConfigEntrain
+];
 ```
 
-You can add any other configuration you want to the same section. For
+You can add or override rules or other configuration options using standard
+eslint flat configuration.
+
 example, one project required:
 
 ```
-  "eslintConfig": {
-    "extends": "@ig3/eslint-config-entrain",
-    "rules": {
-      "node/no-callback-literal": "off"
-    },
-    "parserOptions": {
-      "sourceType": "script"
+'use strict';
+
+const eslintConfigEntrain = require('@ig3/eslint-config-entrain');
+const globals = require('globals');
+
+module.exports = [
+  ...eslintConfigEntrain,
+  languageOptions: {
+    sourceType: 'commonjs',
+    globals: {
+      ...globals.node,
     }
-  }
+  },
+];
 ```
 
-This overrode one rule setting and changed one parser option, otherwise all
-settings as per `eslint-config-entrain`.
+## Implementation
+This implementation is based on
+[neostandard](https://www.npmjs.com/package/neostandard).
+
+Previous versions were based on
+[eslint-config-standard](https://www.npmjs.com/package/eslint-config-standard)
+however that was stuck on eslint version 8 with no immediate plans to
+support version 9 and the new flat configuration. The neostandard project
+was forked to address the stalled development of standard.
 
 For full details of creating and using shared configurations, see: 
 [sharable configs](http://eslint.org/docs/developer-guide/shareable-configs).
-
-Alternatively, you can use an
-[eslint configuration file](https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats).
-Again, this is merely a configuration of eslint, so everything in the
-[eslint](https://eslint.org/) documentation works as expected.
 
 
 ## Rules
 
 `eslint-config-entrain` is based on
-[eslint-config-standard](https://github.com/feross/eslint-config-standard).
+[neostandard](https://www.npmjs.com/package/neostandard).
 
-Three rules are changed:
+The following rules are changed:
 
 ```
-{
-  "extends": "standard",
-
-  "rules": {
-    "semi": [2, "always"],
-    "no-extra-semi": 2,
-    "indent": [ "error", 2, { "MemberExpression": 0 }],
-    "object-shorthand": ["error", "consistent"]
-  }
-}
+  {
+    rules: {
+      '@stylistic/semi': [2, 'always'],
+      '@stylistic/no-extra-semi': 2,
+      '@stylistic/indent': ['error', 2, {
+        MemberExpression: 0,
+      }],
+      'object-shorthand': ['error', 'consistent'],
+    },
+  },
 ```
 
-[Semicolons are required](https://eslint.org/docs/rules/semi)
-but [no extra semicolons](https://eslint.org/docs/rules/no-extra-semi)
+[Semicolons are required](https://eslint.style/rules/default/semi)
+but [no extra semicolons](https://eslint.style/rules/default/no-extra-semi)
 are allowed, and
-[2 spaces indentation (no tabs)](https://eslint.org/docs/rules/indent)
+[2 spaces indentation (no tabs)](https://eslint.style/rules/default/indent)
 without enforced indentaton of multi-line property chains.
 
 [Object shorthand](https://eslint.org/docs/rules/object-shorthand) must be
@@ -110,7 +116,7 @@ But if you prefer to indent the promise chain, that's OK too:
 
 ## Motivation
 
-I quite like [standardjs](https://standardjs.com/) except:
+I quite liked [standardjs](https://standardjs.com/) except:
 
  1. For consistency with other languages that require semicolons (e.g. Perl,
     C, etc.) I prefer to use semicolons to terminate statements. [Automatic
@@ -140,6 +146,12 @@ I quite like [standardjs](https://standardjs.com/) except:
     [eslint](https://eslint.org) documentation is frustrating, particularly
     as some of the features of [standardjs](https://standardjs.com) are not
     documented (e.g. details of the command line options).
+
+ 5. It doesn't support eslint version 9 and flat configuration, and the
+    current version (as at 20240619) requires packages that are no longer
+    supported, some of which have known faults. The package developers and
+    contributors were unable to agree to a plan to support version 9,
+    causing neostandard to be forked.
 
 With this configuration, I can have all the rules of
 [standardjs](https://standardjs.org), with just a couple of personal
@@ -203,3 +215,8 @@ Update dependencies:
  eslint-plugin-standard   >=4.0.0  →   >=5.0.0
  tape                      ^4.9.1  →    ^5.2.2
 ```
+
+## 4.0.1 - 20240619
+ * Based on neostandard instead of standard
+ * Configuration for eslint version 9 flat configuration
+ * updated dependencies

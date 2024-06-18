@@ -7,7 +7,7 @@ module.exports = [
   {
     rules: {
       '@stylistic/semi': [2, 'always'],
-      'no-extra-semi': 2,
+      '@stylistic/no-extra-semi': 2,
       '@stylistic/indent': ['error', 2, {
         MemberExpression: 0,
       }],

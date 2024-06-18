@@ -1,46 +1,25 @@
 {
   "name": "@ig3/eslint-config-entrain",
   "description": "eslint sharable config for Entrain",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
-    "eslint": "^8.14.0",
-    "tape": "^5.5.3"
+    "eslint": "^9.5.0",
+    "tape": "^5.8.1"
   },
   "keywords": [
     "entrain",
-    "semistandard",
-    "style checker",
-    "code style",
-    "code checker",
-    "code linter",
-    "style linter",
-    "simple",
-    "policy",
-    "style",
-    "code",
-    "lint",
     "eslint",
-    "jshint",
-    "jscs",
-    "hint",
-    "enforce",
-    "check",
-    "verify",
-    "quality",
-    "checker",
-    "code standards",
-    "JavaScript Semistandard Style",
-    "semistandard style",
-    "eslintconfig"
+    "eslintconfig",
+    "flat",
+    "commonjs",
+    "cjs"
   ],
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": ">=2.26.0",
-    "eslint-plugin-node": ">=11.1.0",
-    "eslint-plugin-promise": ">=6.0.0"
+    "@stylistic/eslint-plugin-js": "^2.2.1",
+    "neostandard": "^0.7.2"
   },
   "repository": {
     "type": "git",
