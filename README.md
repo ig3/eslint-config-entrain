@@ -223,3 +223,6 @@ Update dependencies:
 
 ## 4.0.1 - 20240619
  * Remove dependency @stylistic/eslint-plugin-js
+
+## 4.0.2 - 20240622
+ * Add newstandard as a keyword
