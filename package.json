@@ -4,8 +4,9 @@
   "version": "4.0.2",
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
+    "@ig3/test": "^0.0.8",
     "eslint": "^9.5.0",
-    "tape": "^5.8.1"
+    "multi-tape": "^1.7.1"
   },
   "keywords": [
     "entrain",
@@ -26,6 +27,6 @@
     "url": "git+https://github.com/ig3/eslint-config-entrain.git"
   },
   "scripts": {
-    "test": "eslint . && tape test/*.js"
+    "test": "eslint . && multi-tape test/*.js"
   }
 }
