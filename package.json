@@ -5,7 +5,7 @@
   "author": "Ian Goodacre <Ian.Goodacre@entrain.nz>",
   "devDependencies": {
     "@ig3/test": "^0.0.8",
-    "eslint": "^9.5.0",
+    "eslint": "^9.7.0",
     "multi-tape": "^1.7.1"
   },
   "keywords": [
@@ -20,7 +20,7 @@
   "license": "ISC",
   "main": "index.js",
   "dependencies": {
-    "neostandard": "^0.7.2"
+    "neostandard": "^0.11.1"
   },
   "repository": {
     "type": "git",
