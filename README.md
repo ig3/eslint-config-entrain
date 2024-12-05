@@ -227,6 +227,9 @@ Update dependencies:
 ## 4.0.2 - 20240622
  * Add newstandard as a keyword
 
-## 4.0.4 - 20240717
+## 4.0.3 - 20240717
  * Replace tape with multi-tape and @ig3/test
+ * Update dependencies
+
+## 4.0.4 - 20241296
  * Update dependencies
