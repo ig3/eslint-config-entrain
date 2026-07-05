@@ -245,3 +245,6 @@ Update dependencies:
 
 ## 4.0.4 - 20241296
  * Update dependencies
+
+## 4.0.5 - 20260706
+ * Update dependencies
