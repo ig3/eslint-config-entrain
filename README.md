@@ -47,6 +47,18 @@ module.exports = [
 ];
 ```
 
+In a module, either user extension .cjs to write it as an ES module:
+
+```
+import { defineConfig } from "eslint/config";
+import eslintConfigEntrain from '@ig3/eslint-config-entrain';
+
+export default defineConfig([
+  ...eslintConfigEntrain
+]);
+```
+
+
 ## Implementation
 This implementation is based on
 [neostandard](https://www.npmjs.com/package/neostandard).
